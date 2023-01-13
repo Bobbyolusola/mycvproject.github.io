@@ -9,6 +9,9 @@
     width: 55%;
     height: 1322px;
     background-color: #F8F8F8;
+    display: flex;
+    align-items: center;
+
 }
 
 .halfRightBox{
@@ -48,12 +51,13 @@
 
 .imgBox{
     width: 300px;
-    height: 480px;
+    height: 430px;
 }
 
 .eclipseHome{
     height: 275px;
     width: 275px;
+    background-color: #B3B3B1;
     border-radius: 150px;
     display: flex;
     justify-content: center;
@@ -62,7 +66,7 @@
 
 
 .headerName{
-    height: 55px;
+    height: 70px;
     width: 90%;
     color: #36554A;
     font: 35px Roboto bold;
@@ -79,16 +83,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .secondSubHeaderName{
-    height: 130px;
-    width: 90%;
+    height: 115px;
+    width: 100%;
     color: #6B6767;
     font: 16px Roboto regular;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+}
+
+.innerSecondSubHeaderName{
+    height: 110px;
+    width: 100%;
 }
 
 .basicInfoBox{

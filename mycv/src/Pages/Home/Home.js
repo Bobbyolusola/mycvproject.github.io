@@ -25,9 +25,9 @@ const Home = () => {
                                     Front-end Web Developer
                             </div>
                             <div className={styles.secondSubHeaderName}>
+                                <div className={styles.innerSecondSubHeaderName}>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor earum, eius perferendis quos ut voluptatem.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita in incidunt nostrum quo ratione rem.
-                                    Lorem ipsum dolor sit amet, conse
+                                </div>
                             </div>
 
                         </div>
