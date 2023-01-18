@@ -14,35 +14,9 @@
 
 }
 
-.halfRightBox{
-    width: 35%;
-    height: 1500px;
-    background-color: #38584C;
-    display: flex;
-    align-items: center;
-}
-
-.innerBox{
-    display: flex;
-    justify-content: end;
-    width: 50%;
-    height: 1440px;
-    background-color: white;
-    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
-    position: absolute;
-    right: 8%;
-}
-
-.headerBox{
-    display: flex;
-    justify-content: center;
-    width: 48%;
-    height: 60px;
-}
-
 .InnerHalfLeftBox{
     width: 395px;
-    height: 1255px;
+    height: 1350px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -105,11 +79,11 @@
 
 .basicInfoBox{
     width: 354px;
-    height: 650px;
-    margin-bottom: 50px;
+    height: 700px;
+    margin-bottom: 100px;
 }
 
-.basicInfoHeader{
+.basicInfoHeader, .eduHeaderBox, .jobHeaderBox{
     height: 23px;
     width: 298px;
     color: #36554A;
@@ -151,7 +125,7 @@ hr{
 .skillsBox{
     height: 170px;
     width: 100%;
-    margin-top: 70px;
+    margin-top: 65px;
 }
 
 .skills{
@@ -171,7 +145,7 @@ hr{
 .refBox{
     height: 170px;
     width: 100%;
-    margin-top: 135px;
+    margin-top: 200px;
 }
 
 .ref{
@@ -191,4 +165,70 @@ hr{
     font: 14px regular Roboto;
     color: #6B6767;
     line-height: 8px;
+}
+
+.halfRightBox{
+    width: 35%;
+    height: 1500px;
+    background-color: #38584C;
+    display: flex;
+    align-items: center;
+}
+
+.innerBox{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 1440px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
+    position: absolute;
+    right: 8%;
+}
+
+.mainHeaderBox{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headerBox{
+    display: flex;
+    justify-content: center;
+    width: 48%;
+    height: 60px;
+}
+
+.mainEduJobBox{
+    height: 1400px;
+    width: 100%;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.eduBox{
+    width: 90%;
+    height: 500px;
+    background-color: yellow;
+}
+
+.eduInfoBox{
+    height: 73px;
+    width: 100%;
+    background-color: aqua;
+}
+
+.eduHeaderBox{
+    height: 0;
+}
+
+.jobBox{
+    width: 90%;
+    height: 800px;
+    background-color: grey;
 }

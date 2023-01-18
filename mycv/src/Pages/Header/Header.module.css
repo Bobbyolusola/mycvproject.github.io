@@ -8,8 +8,6 @@
     margin-top: 8px;
     text-decoration: inherit;
 
-
-
 }
 
 .buttonLogin{
@@ -17,6 +15,28 @@
     width: 110px;
     border: 0.5px solid white;
     background-color: #38584C;
+    border-radius: 6px;
+    font: 18px Roboto;
+    margin-top: 6px
+}
+
+.buttonHome2{
+    height: 35px;
+    width: 110px;
+    border: 0.5px solid white;
+    background-color: #38584C;
+    border-radius: 6px;
+    font: 18px Roboto;
+    margin-top: 8px;
+    text-decoration: inherit;
+
+}
+
+.buttonLogin2{
+    height: 35px;
+    width: 110px;
+    border: 0.5px solid #38584C;
+    background-color: white;
     border-radius: 6px;
     font: 18px Roboto;
     margin-top: 6px

@@ -1,0 +1,71 @@
+.mainBox{
+    width: 100%;
+    height: 80px;
+    background-color: #F3F4F4;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.mainHeaderBox{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headerBox{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 60px;
+}
+
+.mainLoginBox{
+    height: 600px;
+    display: flex;
+    background-color: #F3F4F4;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBox{
+    width: 400px;
+    height: 400px;
+    background-color: #F6FBF9;
+    border-radius: 32px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginHeader{
+    width: 100%;
+    height: 33px;
+    color: #38584C;
+    font: 32px bold Roboto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.loginSubHeader{
+    width: 100%;
+    height: 39px;
+    color: #32403B;
+    font: 15px regular Roboto;
+    text-align: center;
+}
+
+
+.loginHeaderDiv{
+    margin-bottom: 30px;
+}
+
+.inputStyleBox{
+    height: 100px;
+    width: 90%;
+    background-color: red;
+}

@@ -103,6 +103,9 @@ const Home = () => {
                                                 {users && users.map((user) =>(
                                                 <p><li>{user?.fourthSkill}</li></p>
                                                 ))}
+                                                {users && users.map((user) =>(
+                                                    <p><li>{user?.fourthSkill}</li></p>
+                                                ))}
                                             </ol>
                                         </div>
                                     </div>
@@ -147,11 +150,38 @@ const Home = () => {
                             </div>
                         </div>
 
+
                         <div className={styles.halfRightBox} >
                             <div className={styles.innerBox}>
-                                <div className={styles.headerBox}>
-                                    <Header />
+                                <div className={styles.mainHeaderBox}>
+                                    <div className={styles.headerBox}>
+                                        <Header />
+                                    </div>
                                 </div>
+                                <div className={styles.mainEduJobBox}>
+                                    <div className={styles.eduBox}>
+                                        <div className={styles.eduHeaderBox}>
+                                            Education
+                                        </div>
+                                        <div className={styles.eduInfoBox}>
+                                            <div>
+                                                <ol style={{ listStyleType: 'disc' }}>
+                                                    <li>Banana</li>
+                                                    <li>Pineapple</li>
+                                                    <li>Cherry</li>
+                                                </ol>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.jobBox}>
+                                        <div className={styles.jobHeaderBox}>
+                                            Job Experience
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                 </div>
