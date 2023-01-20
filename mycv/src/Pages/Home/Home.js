@@ -5,6 +5,8 @@ import {useEffect, useState} from "react";
 import {collection, addDoc, onSnapshot, doc, setDoc, deleteDoc} from "firebase/firestore";
 import db from "../../firebase"
 import React from 'react';
+import {AiFillPhone, AiTwotoneMail, AiTwotoneHome} from 'react-icons/ai';
+import {BsLinkedin} from 'react-icons/bs';
 
 
 const Home = () => {
@@ -42,7 +44,6 @@ const Home = () => {
                                     <div className={styles.eclipseHome}>
                                         <img src={image} alt='photo' style={imgStyle}/>
                                     </div>
-
                                     <div className={styles.headerName}>
                                         {users && users.map((user) => (
                                             <p> {user?.firstName} {user?.lastName}</p>
@@ -68,21 +69,43 @@ const Home = () => {
                                         <p>Basic Information<hr/></p>
                                     </div>
                                     <div className={styles.phoneInfo}>
+                                         <div className={styles.Icon}>
+                                             <div>
+                                                 <AiFillPhone />
+                                             </div>
+                                             <div>
+                                                 <AiTwotoneMail />
+                                             </div>
+                                             <div>
+                                                 <BsLinkedin />
+                                             </div>
+                                             <div>
+                                                 <AiTwotoneHome />
+                                             </div>
+                                         </div>
                                         <div className={styles.answerInfo1}>
                                             <p>Phone</p>
                                             <p>Email</p>
+                                            <p>LinkedIn</p>
                                             <p>Address</p>
                                         </div>
                                         <div className={styles.answerInfo2}>
                                             {users && users.map((user) =>(
-                                                <p>{user?.phone}</p>
-                                            ))}
-                                            {users && users.map((user) =>(
-                                                <p>{user?.email}</p>
-                                            ))}
-                                            {users && users.map((user) =>(
-                                                <p>{user?.address}</p>
-                                            ))}
+                                                 <div> <p>{user?.phone}</p>
+                                                  <p>{user?.email}</p>
+                                                  <p><a href="https://www.linkedin.com/in/olusola-gbenga-adelabu-952620210/" target='_blank'>{user?.linkedln}</a></p>
+                                                  <p>{user?.address}</p> </div>
+                                                ))}
+                                                {/*{users && users.map((user) =>(*/}
+                                                {/*    <p></p>*/}
+                                                {/*))}*/}
+                                                {/*{users && users.map((user) =>(*/}
+                                                {/*    <p><a href="https://www.linkedin.com/in/olusola-gbenga-adelabu-952620210/" target='_blank'>{user?.linkedln}</a></p>*/}
+                                                {/*))}*/}
+                                                {/*{users && users.map((user) =>(*/}
+                                                {/*    <p>{user?.address}</p>*/}
+                                                {/*))}*/}
+
                                         </div>
                                     </div>
                                     <div className={styles.skillsBox}>

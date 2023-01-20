@@ -113,9 +113,19 @@ hr{
     margin-top: 40px;
 }
 
+.Icon{
+    width: 6%;
+    height: 145px;
+    margin-top: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #013522;
+}
+
 .answerInfo2{
     height: 100px;
-    width: 80%;
+    width: 70%;
     font: 17px regular Roboto;
     color: #6B6767;
     line-height: 16px;
@@ -125,7 +135,7 @@ hr{
 .skillsBox{
     height: 170px;
     width: 100%;
-    margin-top: 65px;
+    margin-top: 95px;
 }
 
 .skills{
@@ -203,7 +213,6 @@ hr{
 .mainEduJobBox{
     height: 1400px;
     width: 100%;
-    background-color: green;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -214,13 +223,13 @@ hr{
 .eduBox{
     width: 90%;
     height: 500px;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 .eduInfoBox{
     height: 73px;
     width: 100%;
-    background-color: aqua;
+    /*background-color: aqua;*/
 }
 
 .eduHeaderBox{
@@ -230,5 +239,7 @@ hr{
 .jobBox{
     width: 90%;
     height: 800px;
-    background-color: grey;
+    /*background-color: grey;*/
 }
+
+

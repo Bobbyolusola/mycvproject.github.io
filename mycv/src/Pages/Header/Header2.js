@@ -3,7 +3,7 @@ import {AppRoutes} from "../../common/Routes";
 import styles from "./Header.module.css";
 import {useState} from "react";
 
-const Header = () => {
+const Header2 = () => {
     const [hoverHome, setHoverHome] = useState(false);
     const homeBtn = () => {
         setHoverHome(true);
@@ -42,4 +42,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Header2;

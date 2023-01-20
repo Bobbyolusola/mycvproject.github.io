@@ -1,0 +1,158 @@
+.mainBox{
+    width: 100%;
+    height: 1500px;
+    background-color: #F3F4F4;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.mainHeaderBox{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.headerBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 60px;
+}
+.signOutBtn{
+    height: 120px;
+    width: 100%;
+    background-color: green;
+
+}
+.signOutInnerBtn{
+    height: 50px;
+    width: 90%;
+    background-color: yellow;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mainEditBox{
+    height: 1000px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.EditBox{
+    height: 271px;
+    width: 91%;
+    background: #F6FBF9;
+    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.imageBox{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eclipseHome{
+    height: 235px;
+    width: 235px;
+    background-color: #B3B3B1;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainProfBox{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.profBoxInfo{
+    width: 400px;
+    height: 150px;
+}
+
+.profession{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 28px;
+    letter-spacing: 0.12em;
+    color: #3C3C3C;
+}
+
+.about{
+    font: 16px Roboto regular;
+    color: #6B6767;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+}
+
+.editBox{
+    height: 93%;
+    width: 5%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.basicInfoBox{
+    height: 100px;
+    width: 91%;
+    background: #F6FBF9;
+    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
+    border-radius: 10px;
+}
+
+.skillsBox{
+    height: 100px;
+    width: 91%;;
+    background: #F6FBF9;
+    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
+    border-radius: 10px;
+}
+
+.educationBox{
+    height: 100px;
+    width: 91%;
+    background: #F6FBF9;
+    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
+    border-radius: 10px;
+}
+
+.jobExpBox{
+    height: 100px;
+    width: 91%;
+    background: #F6FBF9;
+    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
+    border-radius: 10px;
+}
+
+.refBox{
+    height: 100px;
+    width: 91%;
+    background: #F6FBF9;
+    box-shadow: 0px 0px 20px rgba(1, 65, 125, 0.25);
+    border-radius: 10px;
+}
+
+
+
+
