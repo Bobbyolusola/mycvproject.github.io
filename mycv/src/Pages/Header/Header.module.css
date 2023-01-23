@@ -10,6 +10,35 @@
 
 }
 
+
+.btnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.btn{
+    height: 35px;
+    width: 110px;
+    border-radius: 6px;
+    font: 18px Roboto;
+    background-color: #38584C;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    border: 0.5px solid #38584C;
+    background-color: white;
+    color: #38584C;
+}
+
+.active:hover{
+    background-color: #38584C;
+    color: white;
+}
+
 .buttonLogin{
     height: 35px;
     width: 110px;

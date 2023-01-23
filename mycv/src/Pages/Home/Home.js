@@ -28,11 +28,54 @@ const Home = () => {
       const collectionRef = collection(db, "info");
       onSnapshot(collectionRef, (snapshot) => {
       const data = snapshot.docs.map((doc)=> ({...doc.data(), id: doc.id}))
-          // console.log(data);
+          console.log(data);
           setUsers(data);
 
       })
     }
+
+    const b = {
+        commonInfo:{
+            lastName: "Bobby",
+            firstName: "Olugbenga",
+            profession: "Front-end developer",
+        },
+        basicInfo:[
+            {
+                type: 'Phone',
+                value: "836826228",
+            },
+            {
+                type: 'Phone',
+                value: "836826228",
+            },
+            {
+                type: 'Email',
+                value: "logos@mail.com",
+            },
+        ],
+        skills: ["", ""],
+        reference: [
+            {name: ''}
+        ],
+        education: [
+            {
+                startDate: '',
+                endDate: '',
+                name: ""
+            }
+        ],
+        jobs: [
+            {
+                startDate: '',
+                endDate: '',
+                companyName: "",
+                position: ''
+            }
+        ]
+    }
+
+
 
     return (
 

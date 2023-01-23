@@ -67,11 +67,14 @@ const Login = () => {
 
     const handleLoginSubmit = async(e) => {
         e.preventDefault();
-        setError('');
-        await login();
         console.log(auth.currentUser);
-        auth?.currentUser?.uid && navigate(AppRoutes.profile);
-        e.target.reset();
+        if(auth?.currentUser?.uid) {
+            navigate(AppRoutes.profile);
+        } else {
+            setError('');
+            await login();
+            e.target.reset();
+        }
     }
 
 
