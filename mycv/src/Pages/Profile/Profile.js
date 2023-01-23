@@ -39,6 +39,7 @@ const Profile = () => {
         <div>
             <div className={styles.mainBox}>
                 <div className={styles.mainHeaderBox}>
+                    <div className={styles.profileHeaderBox}> PROFILE</div>
                     <div className={styles.headerBox}>
                         <Header />
                     </div>

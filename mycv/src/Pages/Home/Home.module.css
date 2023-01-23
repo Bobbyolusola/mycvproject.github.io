@@ -65,7 +65,7 @@
     height: 110px;
     width: 100%;
     color: #6B6767;
-    font: 16px Roboto regular;
+    font: 17px Roboto regular;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -223,13 +223,13 @@ hr{
 .eduBox{
     width: 90%;
     height: 500px;
-    /*background-color: yellow;*/
+    margin-bottom: 50px;
 }
 
 .eduInfoBox{
     height: 73px;
     width: 100%;
-    /*background-color: aqua;*/
+
 }
 
 .eduHeaderBox{
@@ -238,8 +238,18 @@ hr{
 
 .jobBox{
     width: 90%;
-    height: 800px;
-    /*background-color: grey;*/
+    height: 600px;
+    margin-bottom: 70px;
+}
+
+.jobHeaderBox{
+    height: 0;
+
+}
+
+.jobInfoBox{
+    height: 73px;
+    width: 100%;
 }
 
 

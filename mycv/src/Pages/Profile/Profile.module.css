@@ -14,6 +14,22 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font: 23px semibold Roboto;
+    line-height: 28px;
+    letter-spacing: 0.12em;
+    color: #36554A;
+
+}
+
+.profileHeaderBox{
+    height: 100px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-left: 93px;
+    margin-top: 20px;
+    letter-spacing: 0.12em;
+    font: 35px bold Roboto;
 }
 
 .headerBox{
@@ -22,7 +38,9 @@
     align-items: center;
     width: 40%;
     height: 60px;
+    margin-right: 80px;
 }
+
 .signOutBtn{
     height: 120px;
     width: 100%;
