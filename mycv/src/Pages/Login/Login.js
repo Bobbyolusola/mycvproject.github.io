@@ -42,40 +42,65 @@ const Login = () => {
     let email = formValues.email.toLowerCase().trim();
     let password = formValues.password;
 
-    const login = async() => {
-        await signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in
-                console.log(userCredential.user);
-                // ...
-            })
-            .catch((error) => {
-                if (
-                    error.code === AuthErrorCodes.INVALID_PASSWORD ||
-                    error.code === AuthErrorCodes.USER_DELETED
-                 )
-                    {
-                    setError("The email address or password is  incorrect");
-                } else
-                    {
-                    console.log(error.code);
-                    alert(error.code);
-                }
-            });
+    const login = () => {
+        return signInWithEmailAndPassword(auth, email, password) //Promise
     }
 
-
-    const handleLoginSubmit = async(e) => {
+    const handleLoginSubmit = async (e) => {
         e.preventDefault();
-        console.log(auth.currentUser);
-        if(auth?.currentUser?.uid) {
+        try {
+            const resp = await login()
             navigate(AppRoutes.profile);
-        } else {
             setError('');
-            await login();
             e.target.reset();
+        } catch(error){
+            if (
+                error.code === AuthErrorCodes.INVALID_PASSWORD ||
+                error.code === AuthErrorCodes.USER_DELETED
+            )
+            {
+                setError("The email address or password is  incorrect");
+            } else
+            {
+                console.log(error.code);
+                alert(error.code);
+            }
         }
+
+
+
+
+        //     .then((userCredential) => {
+        //     console.log(userCredential.user);
+        //     navigate(AppRoutes.profile);
+        //         setError('');
+        //         e.target.reset();
+        // })
+        //     .catch((error) => {
+        //         if (
+        //             error.code === AuthErrorCodes.INVALID_PASSWORD ||
+        //             error.code === AuthErrorCodes.USER_DELETED
+        //         )
+        //         {
+        //             setError("The email address or password is  incorrect");
+        //         } else
+        //         {
+        //             console.log(error.code);
+        //             alert(error.code);
+        //         }
+        //     });
     }
+    // const handleLoginSubmit = async(e) => {
+    //     e.preventDefault();
+    //     console.log(auth.currentUser);
+    //     if(auth?.currentUser?.uid) {
+    //         navigate(AppRoutes.profile);
+    //     } else {
+    //         setError('');
+    //         await login();
+    //         e.target.reset();
+    //     }
+    // }
 
 
 

@@ -19,7 +19,7 @@ function App() {
                       {/*<PublicRoute Component={Login}/>}*/}
 
                   <Route path = {AppRoutes.profile} element={
-                      < PrivateRoute Component={Profile }/>
+                      <PrivateRoute Component={Profile }/>
                   } />
                   <Route path = {AppRoutes.notFound} element={<NotFound />} />
 

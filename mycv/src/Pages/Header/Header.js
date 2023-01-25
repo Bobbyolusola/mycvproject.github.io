@@ -1,9 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AppRoutes, AppRoutesConstants } from "../../common/Routes";
 import styles from "./Header.module.css";
 import {useState} from "react";
+import { signOutUser } from "../../Helpers/js-helpers";
 
 const Header = () => {
+    const navigate = useNavigate();
     const [hoverHome, setHoverHome] = useState(false);
     const homeBtn = () => {
         setHoverHome(true);
@@ -25,6 +27,12 @@ const Header = () => {
     const getStyle = (route) => {
         return `${styles.btn} ${AppRoutesConstants[route] === path ? styles.active : ''}`
     }
+
+    const redirect = (path) => {
+        console.log('path', path)
+        navigate(path)
+    }
+
     return(
         <div>
             <button type="button" className={styles.buttonHome}>
@@ -46,10 +54,13 @@ const Header = () => {
             <hr/>
             <div className={styles.btnContainer}>
             {
-                Object.keys(AppRoutesConstants).map(route => (
-                    <div className={getStyle(route)}>{route}</div>
-                ))
+                Object.keys(AppRoutesConstants).map(route => {
+                    return(
+                        <div className={getStyle(route)} onClick={()=>redirect(AppRoutesConstants[route])}>{route}</div>
+                    )
+                })
             }
+            <button onClick={signOutUser}>Sign out</button>
             </div>
 
         </div>
