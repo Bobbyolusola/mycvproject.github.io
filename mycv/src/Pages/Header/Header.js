@@ -1,11 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AppRoutes, AppRoutesConstants } from "../../common/Routes";
+import { AppRoutes, AppRoutesAuth, AppRoutesConstants } from "../../common/Routes";
 import styles from "./Header.module.css";
 import {useState} from "react";
-import { signOutUser } from "../../Helpers/js-helpers";
+import { authUser, signOutUser } from "../../Helpers/js-helpers";
+import { auth } from "../../firebase";
 
 const Header = () => {
     const navigate = useNavigate();
+    const user = authUser();
     const [hoverHome, setHoverHome] = useState(false);
     const homeBtn = () => {
         setHoverHome(true);
@@ -32,35 +34,37 @@ const Header = () => {
         console.log('path', path)
         navigate(path)
     }
+    console.log(auth?.currentUser)
+
 
     return(
         <div>
-            <button type="button" className={styles.buttonHome}>
-                <Link style={{textDecoration: "none", backgroundColor: hoverHome ? '#38584C' : 'white',
-                color: hoverHome ? 'white' : '#38584C', width: hoverHome ? '200px' : '', height: hoverHome ? '200px' : ''
-                }}
-                      onMouseEnter = {homeBtn}
-                      onMouseLeave = {leaveHomeBtn}
-                      to = {AppRoutes.home}>Home</Link></button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button" className={styles.buttonLogin}>
-                <Link style={{textDecoration: "none", backgroundColor: hoverLogin ? 'white' : '#38584C',
-                color: hoverLogin ? '#38584C' : 'white', width: hoverLogin ? '200px' : '', height: hoverLogin ? '200px' : ''
+            {/*<button type="button" className={styles.buttonHome}>*/}
+            {/*    <Link style={{textDecoration: "none", backgroundColor: hoverHome ? '#38584C' : 'white',*/}
+            {/*    color: hoverHome ? 'white' : '#38584C', width: hoverHome ? '200px' : '', height: hoverHome ? '200px' : ''*/}
+            {/*    }}*/}
+            {/*          onMouseEnter = {homeBtn}*/}
+            {/*          onMouseLeave = {leaveHomeBtn}*/}
+            {/*          to = {AppRoutes.home}>Home</Link></button>*/}
+            {/*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
+            {/*<button type="button" className={styles.buttonLogin}>*/}
+            {/*    <Link style={{textDecoration: "none", backgroundColor: hoverLogin ? 'white' : '#38584C',*/}
+            {/*    color: hoverLogin ? '#38584C' : 'white', width: hoverLogin ? '200px' : '', height: hoverLogin ? '200px' : ''*/}
 
-                }}
-                      onMouseEnter = {loginBtn}
-                      onMouseLeave = {leaveLoginBtn}
-                      to = {AppRoutes.login}>Login</Link></button>
+            {/*    }}*/}
+            {/*          onMouseEnter = {loginBtn}*/}
+            {/*          onMouseLeave = {leaveLoginBtn}*/}
+            {/*          to = {AppRoutes.login}>Login</Link></button>*/}
             <hr/>
             <div className={styles.btnContainer}>
             {
-                Object.keys(AppRoutesConstants).map(route => {
+                Object.keys(user?.uid ? AppRoutesAuth : AppRoutesConstants).map(route => {
                     return(
                         <div className={getStyle(route)} onClick={()=>redirect(AppRoutesConstants[route])}>{route}</div>
                     )
                 })
             }
-            <button onClick={signOutUser}>Sign out</button>
+            <button onClick={()=>signOutUser(navigate)}>Sign out</button>
             </div>
 
         </div>

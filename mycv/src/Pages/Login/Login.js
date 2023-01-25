@@ -50,6 +50,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const resp = await login()
+            localStorage.setItem('auth', JSON.stringify(resp.user))
             navigate(AppRoutes.profile);
             setError('');
             e.target.reset();

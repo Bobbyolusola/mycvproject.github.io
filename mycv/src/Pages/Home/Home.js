@@ -24,7 +24,7 @@ const Home = () => {
     }, []);
 
     const getMyCvData = () => {
-      console.log('Getting data');
+      console.log('Getting data', );
       const collectionRef = collection(db, "info");
       onSnapshot(collectionRef, (snapshot) => {
       const data = snapshot.docs.map((doc)=> ({...doc.data(), id: doc.id}))

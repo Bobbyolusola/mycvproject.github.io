@@ -11,3 +11,7 @@
      Login: "/login",
  }
 
+ export const AppRoutesAuth = {
+     Home: "/",
+ }
+
