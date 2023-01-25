@@ -10,10 +10,10 @@ export const PrivateRoute = ({Component}) => {
     : <Navigate to={AppRoutes.notFound} />
 }
 
-export const PublicRoute = ({Component}) => {
-    const user = auth?.currentUser
-    console.log(auth?.currentUser)
-    return !user?.uid
-        ? <Component />
-        : <Navigate to={AppRoutes.home} />
-}
+// export const PublicRoute = ({Component}) => {
+//     const user = auth?.currentUser
+//     console.log(auth?.currentUser)
+//     return !user?.uid
+//         ? <Component />
+//         : <Navigate to={AppRoutes.home} />
+// }

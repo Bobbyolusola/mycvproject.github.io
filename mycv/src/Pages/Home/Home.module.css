@@ -222,13 +222,12 @@ hr{
 
 .eduBox{
     width: 90%;
-    height: 500px;
-    margin-bottom: 50px;
+    height: 600px;
 }
 
 .eduInfoBox{
     height: 73px;
-    width: 100%;
+    width: 600px;
 
 }
 
@@ -239,7 +238,6 @@ hr{
 .jobBox{
     width: 90%;
     height: 600px;
-    margin-bottom: 70px;
 }
 
 .jobHeaderBox{
@@ -250,6 +248,47 @@ hr{
 .jobInfoBox{
     height: 73px;
     width: 100%;
+}
+
+.innerEduBox{
+    height: 150px;
+    width: 100%;
+    line-height: 50px;
+}
+
+.year{
+    height: 30px;
+    width: 100%;
+    font: 20px Roboto;
+    color: #3C3C3C;
+}
+
+.uniName{
+    height: 30px;
+    width: 100%;
+    font: 20px regular Roboto;
+    color: #3C3C3C;
+}
+
+.acknowledgement{
+    height: 80px;
+    width: 100%;
+    font: 17px regular Roboto;
+    color: #6B6767;
+    line-height: 20px;
+}
+
+.innerjobBox{
+    height: 140px;
+    width: 100%;
+    line-height: 50px;
+}
+
+.jobName{
+    height: 30px;
+    width: 100%;
+    font: 20px regular Roboto;
+    color: #3C3C3C;
 }
 
 

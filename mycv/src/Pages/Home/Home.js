@@ -232,59 +232,56 @@ const Home = () => {
                                         <div className={styles.eduInfoBox}>
                                             <div>
                                                 <ol style={{ listStyleType: 'disc' }}>
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px Roboto', color: '#3C3C3C' }}>
+                                                    <div className={styles.innerEduBox}>
+                                                        <div className={styles.year}>
                                                             <li> <b>2008 - 2012</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
-                                                            A UNIVERSITY NAME
+                                                        <div className={styles.uniName}>
+                                                            UNIVERSITY NAME
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
+                                                        <div className={styles.acknowledgement}>
                                                             Some Educational Institution acknowledgements
                                                         </div>
                                                     </div>
 
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px bold Roboto', color: '#3C3C3C' }}>
+                                                    <div  className={styles.innerEduBox}>
+                                                        <div className={styles.year}>
                                                             <li> <b>2012 - 2013</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
+                                                        <div className={styles.uniName}>
                                                             A UNIVERSITY NAME
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
+                                                        <div className={styles.acknowledgement}>
                                                             Some Educational Institution acknowledgements
                                                         </div>
                                                     </div>
 
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px bold Roboto', color: '#3C3C3C' }}>
+                                                    <div className={styles.innerEduBox}>
+                                                        <div  className={styles.year}>
                                                             <li> <b>2019 - 2022</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
+                                                        <div className={styles.uniName}>
                                                             A UNIVERSITY NAME
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
+                                                        <div className={styles.acknowledgement}>
                                                             Some Educational Institution acknowledgements
                                                         </div>
                                                     </div>
 
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px bold Roboto', color: '#3C3C3C' }}>
+                                                    <div className={styles.innerEduBox}>
+                                                        <div className={styles.year}>
                                                             <li> <b>2022</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
+                                                        <div className={styles.uniName}>
                                                             A UNIVERSITY NAME
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
+                                                        <div className={styles.acknowledgement}>
                                                             Some Educational Institution acknowledgements
                                                         </div>
                                                     </div>
 
                                                 </ol>
                                             </div>
-
-                                            <hr />
-
                                         </div>
                                     </div>
 
@@ -295,50 +292,50 @@ const Home = () => {
                                         <div className={styles.jobInfoBox}>
                                             <div>
                                                 <ol style={{ listStyleType: 'disc' }}>
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px bold Roboto', color: '#3C3C3C' }}>
+                                                    <div className={styles.innerjobBox}>
+                                                        <div className={styles.year}>
                                                             <li> <b>2019 - 2022</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
+                                                        <div className={styles.jobName}>
                                                             FREELANCE
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
+                                                        <div className={styles.acknowledgement}>
                                                             Responsibilities an experience at work
                                                         </div>
                                                     </div>
 
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px bold Roboto', color: '#3C3C3C' }}>
+                                                    <div className={styles.innerjobBox}>
+                                                        <div className={styles.year}>
                                                             <li> <b>2018 - 2019</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
+                                                        <div className={styles.jobName}>
                                                             PROCLIQ
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
-                                                            Responsibilities an experience at work
+                                                        <div className={styles.acknowledgement}>
+                                                            Responsibilities and experience at work
                                                         </div>
                                                     </div>
 
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px bold Roboto', color: '#3C3C3C' }}>
+                                                    <div className={styles.innerjobBox}>
+                                                        <div className={styles.year}>
                                                             <li> <b>2014 - 2018</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
+                                                        <div  className={styles.jobName}>
                                                             TRIPLE A GLOBAL TECH
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
+                                                        <div className={styles.acknowledgement}>
                                                             Responsibilities an experience at work
                                                         </div>
                                                     </div>
 
-                                                    <div style={{height: "130px", width: '100%', backgroundColor: '' }}>
-                                                        <div style={{height: "20px", width: '100%', font: '20px bold Roboto', color: '#3C3C3C' }}>
+                                                    <div className={styles.innerjobBox}>
+                                                        <div className={styles.year}>
                                                             <li> <b>2013-2014</b> </li>
                                                         </div>
-                                                        <div style={{height: "19px", width: '100%', font: '20px regular Roboto', color: '#3C3C3C', lineHeight: '50px'}}>
+                                                        <div  className={styles.jobName}>
                                                             NATIONAL YOUTH SERVICE CORPS
                                                         </div>
-                                                        <div style={{height: "17px", width: '100%', font: '17px regular Roboto', color: '#6B6767', lineHeight: '60px'}}>
+                                                        <div  className={styles.acknowledgement}>
                                                             Responsibilities an experience at work
                                                          </div>
 
