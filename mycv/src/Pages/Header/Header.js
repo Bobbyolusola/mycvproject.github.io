@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AppRoutes, AppRoutesAuth, AppRoutesConstants } from "../../common/Routes";
+import {AppRoutes, AppRoutesAuth, AppRoutesConstants, AppRoutesLog} from "../../common/Routes";
 import styles from "./Header.module.css";
 import {useState} from "react";
 import { authUser, signOutUser } from "../../Helpers/js-helpers";
@@ -8,21 +8,22 @@ import { auth } from "../../firebase";
 const Header = () => {
     const navigate = useNavigate();
     const user = authUser();
-    const [hoverHome, setHoverHome] = useState(false);
-    const homeBtn = () => {
-        setHoverHome(true);
-    };
-    const leaveHomeBtn = () => {
-        setHoverHome(false);
-    };
 
-    const [hoverLogin, setHoverLogin] = useState(false);
-    const loginBtn = () => {
-        setHoverLogin(true);
-    };
-    const leaveLoginBtn = () => {
-        setHoverLogin(false);
-    };
+    // const [hoverHome, setHoverHome] = useState(false);
+    // const homeBtn = () => {
+    //     setHoverHome(true);
+    // };
+    // const leaveHomeBtn = () => {
+    //     setHoverHome(false);
+    // };
+    //
+    // const [hoverLogin, setHoverLogin] = useState(false);
+    // const loginBtn = () => {
+    //     setHoverLogin(true);
+    // };
+    // const leaveLoginBtn = () => {
+    //     setHoverLogin(false);
+    // };
 
     const path = useLocation().pathname
 
@@ -55,16 +56,18 @@ const Header = () => {
             {/*          onMouseEnter = {loginBtn}*/}
             {/*          onMouseLeave = {leaveLoginBtn}*/}
             {/*          to = {AppRoutes.login}>Login</Link></button>*/}
-            <hr/>
+
+
             <div className={styles.btnContainer}>
             {
-                Object.keys(user?.uid ? AppRoutesAuth : AppRoutesConstants).map(route => {
+                Object.keys(user?.uid ? AppRoutesAuth
+                    : !user?.uid ? AppRoutesLog
+                    : AppRoutesConstants).map(route => {
                     return(
                         <div className={getStyle(route)} onClick={()=>redirect(AppRoutesConstants[route])}>{route}</div>
                     )
                 })
             }
-            <button onClick={()=>signOutUser(navigate)}>Sign out</button>
             </div>
 
         </div>

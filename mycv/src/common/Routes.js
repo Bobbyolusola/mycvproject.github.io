@@ -9,9 +9,16 @@
  export const AppRoutesConstants = {
      Home: "/",
      Login: "/login",
+     Profile: "/profile",
  }
 
  export const AppRoutesAuth = {
      Home: "/",
+     Profile: "/profile",
+ }
+
+ export const AppRoutesLog = {
+     Home: "/",
+     Login: "/login",
  }
 

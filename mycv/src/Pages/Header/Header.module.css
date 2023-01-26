@@ -1,17 +1,7 @@
-.buttonHome{
-    height: 35px;
-    width: 110px;
-    border: 0.5px solid #38584C;
-    background-color: white;
-    border-radius: 6px;
-    font: 18px Roboto;
-    margin-top: 8px;
-    text-decoration: inherit;
-
-}
-
 
 .btnContainer{
+    width: 300px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -28,6 +18,13 @@
     align-items: center;
 }
 
+.btn:hover{
+    background-color: white;
+    color: #38584C;
+    cursor: pointer;
+    border: 0.5px solid #38584C;
+}
+
 .active {
     border: 0.5px solid #38584C;
     background-color: white;
@@ -37,36 +34,8 @@
 .active:hover{
     background-color: #38584C;
     color: white;
+    cursor: pointer;
 }
 
-.buttonLogin{
-    height: 35px;
-    width: 110px;
-    border: 0.5px solid white;
-    background-color: #38584C;
-    border-radius: 6px;
-    font: 18px Roboto;
-    margin-top: 6px
-}
 
-.buttonHome2{
-    height: 35px;
-    width: 110px;
-    border: 0.5px solid white;
-    background-color: #38584C;
-    border-radius: 6px;
-    font: 18px Roboto;
-    margin-top: 8px;
-    text-decoration: inherit;
 
-}
-
-.buttonLogin2{
-    height: 35px;
-    width: 110px;
-    border: 0.5px solid #38584C;
-    background-color: white;
-    border-radius: 6px;
-    font: 18px Roboto;
-    margin-top: 6px
-}

@@ -220,9 +220,7 @@ const Home = () => {
                         <div className={styles.halfRightBox} >
                             <div className={styles.innerBox}>
                                 <div className={styles.mainHeaderBox}>
-                                    <div className={styles.headerBox}>
-                                        <Header />
-                                    </div>
+                                    <Header />
                                 </div>
                                 <div className={styles.mainEduJobBox}>
                                     <div className={styles.eduBox}>

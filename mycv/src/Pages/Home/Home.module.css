@@ -197,17 +197,10 @@ hr{
 }
 
 .mainHeaderBox{
-    height: 50px;
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
-}
-
-.headerBox{
-    display: flex;
-    justify-content: center;
-    width: 48%;
-    height: 60px;
 }
 
 .mainEduJobBox{

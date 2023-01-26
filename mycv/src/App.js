@@ -15,8 +15,9 @@ function App() {
               {/*<Header />*/}
               <Routes>
                   <Route path = {AppRoutes.home} element={<Home />} />
-                  <Route path = {AppRoutes.login} element={<Login />} />;ll
-                      {/*<PublicRoute Component={Login}/>}*/}
+                  <Route path = {AppRoutes.login} element={
+                      <PublicRoute Component={Login}/>
+                  } />
 
                   <Route path = {AppRoutes.profile} element={
                       <PrivateRoute Component={Profile }/>

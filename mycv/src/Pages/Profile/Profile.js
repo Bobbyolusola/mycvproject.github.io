@@ -1,5 +1,5 @@
 import styles from "../Profile/Profile.module.css";
-import Header from "../Header/Header3";
+import Header from "../Header/Header"
 import React from "react";
 import {useNavigate} from "react-router-dom";
 import { authUser, setFormData, signOutUser } from "../../Helpers/js-helpers";
@@ -12,6 +12,7 @@ import {AiTwotoneEdit} from "react-icons/ai";
 import {GoDiffAdded} from "react-icons/go";
 import CommonInfoEdit from "./components/CommonInfo/CommonInfoEdit";
 import CommonInfoPreview from "./components/CommonInfo/CommonInfoPreview";
+
 
 const initialEditState = {
     commonInfo: false,
@@ -27,6 +28,30 @@ const Profile = () => { //Container / Smart
     const [editFormValues, setEditFormValues] = useState([]);
     const [editId, setEditId] = useState([]);
     const [editMode, setEditMode] = useState(initialEditState)
+
+
+    let btnstyle = {
+        height: '35px',
+        width: '100px',
+        backgroundColor: '#BA5858',
+        border: '1px solid rgba(0, 0, 0, 0.1)',
+        borderRadius: '5px',
+        font: '20px regular Roboto',
+        letterSpacing: '0.01em',
+        color: 'white',
+    }
+        .hover = {
+        cursor: "pointer",
+        height: '35px',
+        width: '100px',
+        backgroundColor: '#BA5858',
+        border: '1px solid rgba(0, 0, 0, 0.1)',
+        borderRadius: '5px',
+        font: '20px regular Roboto',
+        letterSpacing: '0.01em',
+        color: 'white',
+    }
+
 
     useEffect(()=>{
         console.log('editMode', editMode)
@@ -91,6 +116,7 @@ const Profile = () => { //Container / Smart
                     <div className={styles.profileHeaderBox}> PROFILE</div>
                     <div className={styles.headerBox}>
                         <Header />
+                        <button type="button" style={btnstyle} onClick={()=>signOutUser(navigate)}>LogOut</button>
                     </div>
                 </div>
                 <div className={styles.mainEditBox}>

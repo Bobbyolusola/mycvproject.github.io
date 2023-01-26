@@ -1,11 +1,11 @@
 import styles from './Login.module.css'
 import React, {useState} from "react";
-import Header2 from "../Header/Header2";
 import {auth} from "../../firebase";
 import {signInWithEmailAndPassword, AuthErrorCodes} from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import {AppRoutes} from "../../common/Routes";
 import {setFormData} from "../../Helpers/js-helpers";
+import Header from "../Header/Header";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -110,7 +110,7 @@ const Login = () => {
             <div className={styles.mainBox}>
                 <div className={styles.mainHeaderBox}>
                     <div className={styles.headerBox}>
-                        <Header2 />
+                        <Header />
                     </div>
                 </div>
             </div>
