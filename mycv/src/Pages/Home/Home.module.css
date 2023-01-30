@@ -15,7 +15,7 @@
 }
 
 .InnerHalfLeftBox{
-    width: 395px;
+    width: 540px;
     height: 1350px;
     display: flex;
     flex-direction: column;
@@ -80,15 +80,15 @@
 .basicInfoBox{
     width: 354px;
     height: 700px;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
 
 .basicInfoHeader, .eduHeaderBox, .jobHeaderBox{
-    height: 23px;
+    height: 10px;
     width: 298px;
     color: #36554A;
     font: 23px semi-bold Roboto;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 hr{
     background-color: #CCCCCC;

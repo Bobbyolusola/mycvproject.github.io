@@ -12,6 +12,16 @@ import {AiTwotoneEdit} from "react-icons/ai";
 import {GoDiffAdded} from "react-icons/go";
 import CommonInfoEdit from "./components/CommonInfo/CommonInfoEdit";
 import CommonInfoPreview from "./components/CommonInfo/CommonInfoPreview";
+import BasicInfoEdit from "./components/BasicInfo/BasicInfoEdit";
+import BasicInfoPreview from "./components/BasicInfo/BasicInfoPreview";
+import SkillsInfoPreview from "./components/Skills/SkillsInfoPreview";
+import SkillsInfoEdit from "./components/Skills/SkillsInfoEdit";
+import EduInfoEdit from "./components/EduInfo/EduInfoEdit";
+import EduInfoPreview from "./components/EduInfo/EduInfoPreview";
+import JobsInfoEdit from "./components/jobsInfo/JobsInfoEdit";
+import JobsInfoPreview from "./components/jobsInfo/JobsInfoPreview";
+import RefInfoEdit from "./components/RefInfo/RefInfoEdit";
+import RefInfoPreview from "./components/RefInfo/RefInfoPreview";
 
 
 const initialEditState = {
@@ -121,76 +131,11 @@ const Profile = () => { //Container / Smart
                 </div>
                 <div className={styles.mainEditBox}>
                     {editMode?.commonInfo ? <CommonInfoEdit saveUser={saveUser}/> : <CommonInfoPreview editUser={editUser}/>}
-                    <div className={styles.basicInfoBox}>
-                        <div className={styles.basicInfoBoxHeader}>
-                            BASIC INFORMATION
-                        </div>
-                        <div className={styles.nameValueBasicInfoBox}>
-                            <div className={styles.nameBasicInfoBox}>
-                                {/*<p>Phone</p>*/}
-                                {/*<p>Email</p>*/}
-                                {/*<p>LinkedIn</p>*/}
-                                {/*<p>Address</p>*/}
-                            </div>
-                            <div className={styles.valueBasicInfoBox}>
-                                {/*{users && users.map((user) =>(*/}
-                                {/*    <div> <p>{user?.phone}</p>*/}
-                                {/*        <p>{user?.email}</p>*/}
-                                {/*        <p><a href="https://www.linkedin.com/in/olusola-gbenga-adelabu-952620210/" target='_blank'>{user?.linkedln}</a></p>*/}
-                                {/*        <p>{user?.address}</p> </div>*/}
-                                {/*))}*/}
-                            </div>
-                            <div className={styles.basicEditBox}>
-                                <button type='button' onClick={editUser}
-                                        style={{height: '25px', width: '50px', display: 'flex',
-                                            alignItems: 'center', color: '#36554A', border: '1px solid #36554A',
-                                            borderRadius: '3px'}}>
-                                    <AiTwotoneEdit />
-                                    Edit</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.skillsBox}>
-                        <div className={styles.skillInfoBoxHeader}>
-                            SKILLS
-                        </div>
-                        <div className={styles.skillValueBoxHeader}>
-                            <div  className={styles.addSkillInfoBoxHeader}>
-                                {/*< ol style={{ listStyleType: 'disc' }}>*/}
-                                {/*    {users && users.map((user) =>(*/}
-                                {/*        <p><li>{user?.secondSkill}</li></p>*/}
-                                {/*    ))}*/}
-                                {/*</ol>*/}
-                            </div>
-                            <div  className={styles.addSkillsIcon}>
-                                <button type='button' onClick={editUser}
-                                        style={{height: '25px', width: '60px', display: 'flex',
-                                            alignItems: 'center', color: '#36554A', border: '1px solid #36554A',
-                                            borderRadius: '3px'}}>
-                                    <GoDiffAdded /> &nbsp; Add
-                                </button>
-                            </div>
-                            <div className={styles.editSkillsBox}>
-                                <button type='button' onClick={editUser}
-                                        style={{height: '25px', width: '50px', display: 'flex',
-                                            alignItems: 'center', color: '#36554A', border: '1px solid #36554A',
-                                            borderRadius: '3px'}}>
-                                    <AiTwotoneEdit />
-                                    Edit</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className={styles.educationBox}>
-
-                    </div>
-                    <div className={styles.jobExpBox}>
-
-                    </div>
-                    <div className={styles.refBox}>
-
-                    </div>
+                    {editMode?.basicInfo ? <BasicInfoEdit saveUser={saveUser}/> : < BasicInfoPreview editUser={editUser}/>}
+                    {editMode?.skills ? <SkillsInfoEdit saveUser={saveUser}/> : < SkillsInfoPreview editUser={editUser}/>}
+                    {editMode?.education ? <EduInfoEdit saveUser={saveUser}/> : < EduInfoPreview editUser={editUser}/>}
+                    {editMode?.jobs ? <JobsInfoEdit saveUser={saveUser}/> : < JobsInfoPreview editUser={editUser}/>}
+                    {editMode?.reference ? <RefInfoEdit saveUser={saveUser}/> : < RefInfoPreview editUser={editUser}/>}
                 </div>
             </div>
         </div>

@@ -22,4 +22,4 @@ export const setFormData = (value, key, callback) => {
     });
 };
 
-export const authUser = () =>  JSON.parse(localStorage.getItem('auth'))
+export const authUser = () =>  JSON.parse(localStorage.getItem('auth'));
