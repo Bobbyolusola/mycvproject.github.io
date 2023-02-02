@@ -110,7 +110,6 @@ const Profile = () => { //Container / Smart
     //     });
     // };
 
-
     const saveUser =(editComponentName)=>{
         setFormData(false, editComponentName, setEditMode)
     }
