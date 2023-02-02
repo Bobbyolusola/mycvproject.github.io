@@ -15,10 +15,10 @@ const Header = () => {
     }
 
     const redirect = (path) => {
-        console.log('path', path)
+        // console.log('path', path)
         navigate(path)
     }
-    console.log(auth?.currentUser)
+    // console.log(auth?.currentUser)
 
     return(
         <div>
