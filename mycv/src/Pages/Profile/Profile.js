@@ -127,6 +127,7 @@ const Profile = () => { //Container / Smart
         const docRef = await addDoc(collectionRef, user)
     }
 
+    // SAVE USER FNX INTO FIREBASE.
     const saveUser = (editComponentName, data) => {
         const updatedUser = {
             ...user,
@@ -145,10 +146,10 @@ const Profile = () => { //Container / Smart
         setEditFormValues({});
     }
 
-    const handleDeleteUser = (userId) => {
-        const docRef = doc(db, "info", userId)
-        deleteDoc(docRef)
-    }
+    // const handleDeleteUser = (userId) => {
+    //     const docRef = doc(db, "info", userId)
+    //     deleteDoc(docRef)
+    // }
     //
     // const setFormData = ( value, key) => {
     //     setEditFormValues( (prevState)=> {
@@ -179,8 +180,8 @@ const Profile = () => { //Container / Smart
                 <div className={styles.mainEditBox}>
                     {editMode?.commonInfo ? <CommonInfoEdit saveUser={saveUser}/> :
                         <CommonInfoPreview editUser={editUser} data={user?.commonInfo}/>}
-                    {editMode?.basicInfo ? <BasicInfoEdit saveUser={saveUser} data={user?.basicInfo}/> :
-                        < BasicInfoPreview editUser={editUser}/>}
+                    {editMode?.basicInfo ? <BasicInfoEdit saveUser={saveUser} /> :
+                        < BasicInfoPreview editUser={editUser} data={user?.basicInfo} />}
                     {editMode?.skills ? <SkillsInfoEdit saveUser={saveUser}/> :
                         < SkillsInfoPreview editUser={editUser}/>}
                     {editMode?.education ? <EduInfoEdit saveUser={saveUser}/> : < EduInfoPreview editUser={editUser}/>}
