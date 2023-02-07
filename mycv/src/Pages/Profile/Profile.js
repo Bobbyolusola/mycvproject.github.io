@@ -1,13 +1,14 @@
 import styles from "../Profile/Profile.module.css";
 import Header from "../Header/Header"
-import React from "react";
+import React, { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { authUser, setFormData, signOutUser } from "../../Helpers/js-helpers";
 import image from "../../Images/image.jpg";
 import { useState } from "react";
 import { useEffect } from "react";
 import { addDoc, collection, deleteDoc, doc, onSnapshot, setDoc } from "firebase/firestore";
-import db from "../../firebase";
+import {ref, uploadBytesResumable, getDownloadURL, deleteObject} from "firebase/storage";
+import db, { storage } from "../../firebase";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { GoDiffAdded } from "react-icons/go";
 import CommonInfoEdit from "./components/CommonInfo/CommonInfoEdit";
@@ -61,8 +62,28 @@ const me = {
         }
     ]
 }
-
-
+let btnstyle = {
+    height: '35px',
+    width: '100px',
+    backgroundColor: '#BA5858',
+    border: '1px solid rgba(0, 0, 0, 0.1)',
+    borderRadius: '5px',
+    font: '20px regular Roboto',
+    letterSpacing: '0.01em',
+    color: 'white',
+}
+    .hover = {
+    cursor: "pointer",
+    height: '35px',
+    width: '100px',
+    backgroundColor: '#BA5858',
+    border: '1px solid rgba(0, 0, 0, 0.1)',
+    borderRadius: '5px',
+    font: '20px regular Roboto',
+    letterSpacing: '0.01em',
+    color: 'white',
+}
+export const UserContext = createContext(null);
 const Profile = () => { //Container / Smart
     const navigate = useNavigate();
     const [ user, setUser ] = useState({});
@@ -70,52 +91,50 @@ const Profile = () => { //Container / Smart
     const [ editId, setEditId ] = useState([]);
     const [ editMode, setEditMode ] = useState(initialEditState)
 
-
-    let btnstyle = {
-        height: '35px',
-        width: '100px',
-        backgroundColor: '#BA5858',
-        border: '1px solid rgba(0, 0, 0, 0.1)',
-        borderRadius: '5px',
-        font: '20px regular Roboto',
-        letterSpacing: '0.01em',
-        color: 'white',
-    }
-        .hover = {
-        cursor: "pointer",
-        height: '35px',
-        width: '100px',
-        backgroundColor: '#BA5858',
-        border: '1px solid rgba(0, 0, 0, 0.1)',
-        borderRadius: '5px',
-        font: '20px regular Roboto',
-        letterSpacing: '0.01em',
-        color: 'white',
-    }
-
-
-    useEffect(() => {
-        // console.log('editMode', editMode)
-    }, [ editMode ])
-
     useEffect(() => {
         getMyCvData()
     }, []);
-
-    // useEffect(() => {
-    //     editId !== ' ' && setEditFormValues(user.filter(user => user.id === editId))
-    // }, [ editId ])
-
-
     console.log('user', user)
     const getMyCvData = () => {
-        console.log('Getting data', authUser().uid);
         const collectionRef = collection(db, authUser().uid);
         onSnapshot(collectionRef, (snapshot) => {
             const data = snapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))
-            console.log('FIrestore data', data);
-            setUser(data.length ===0 ? {} : data[0]);
+            setUser(data.length === 0 ? {} : data[0]);
         })
+    }
+
+    const uploadImage = (file, setUploading) => {
+        const storageRef = ref(storage, `/${authUser().uid}/CVphoto/${file.name}`);
+        const uploadData = uploadBytesResumable(storageRef, file.blobFile);
+
+
+        const desertRef = ref(storage, user.commonInfo.imagePath);
+        user?.commonInfo?.imagePath && deleteObject(desertRef).then(() => {
+        }).catch((error) => {
+          console.log(error)
+        });
+
+        uploadData.on("state_changed", (snapshot) => {
+                const prog = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+            }, (err) => console.log(err),
+            ()=> {
+                // @ts-ignore
+                getDownloadURL(uploadData.snapshot.ref)
+                    .then(url => {
+                        setUploading(false)
+                        setUser(prevState => {
+                            return {
+                                ...prevState,
+                                commonInfo:{
+                                    ...prevState.commonInfo,
+                                    imageUrl: url,
+                                    imagePath: `${authUser().uid}/CVphoto/${file.name}`
+                                }
+                            }
+                        })
+                    })
+            }
+        )
     }
 
     const editUserFB = (id, newUser, key) => {
@@ -131,10 +150,13 @@ const Profile = () => { //Container / Smart
     const saveUser = (editComponentName, data) => {
         const updatedUser = {
             ...user,
-            [editComponentName]: data
+            [editComponentName]: {
+                ...user[editComponentName],//{ data + imageUrl}
+                ...data//{data}
+            }
         }
         user?.id
-            ? editUserFB(authUser().uid,updatedUser,  user?.id)
+            ? editUserFB(authUser().uid, updatedUser, user?.id)
             : addUserFB(updatedUser, authUser().uid)
         setFormData(false, editComponentName, setEditMode)
     }
@@ -161,35 +183,42 @@ const Profile = () => { //Container / Smart
     // };
 
 
-
     const editUser = (editComponentName) => {
         setFormData(true, editComponentName, setEditMode)
     }
 
+    const context = {
+        user,
+        uploadImage
+    }
 
     return (
-        <div>
-            <div className={styles.mainBox}>
-                <div className={styles.mainHeaderBox}>
-                    <div className={styles.profileHeaderBox}> PROFILE</div>
-                    <div className={styles.headerBox}>
-                        <Header/>
-                        <button type="button" style={btnstyle} onClick={() => signOutUser(navigate)}>LogOut</button>
+        <UserContext.Provider value={context}>
+            <div>
+                <div className={styles.mainBox}>
+                    <div className={styles.mainHeaderBox}>
+                        <div className={styles.profileHeaderBox}> PROFILE</div>
+                        <div className={styles.headerBox}>
+                            <Header/>
+                            <button type="button" style={btnstyle} onClick={() => signOutUser(navigate)}>LogOut</button>
+                        </div>
+                    </div>
+                    <div className={styles.mainEditBox}>
+                        {editMode?.commonInfo ? <CommonInfoEdit saveUser={saveUser}/> :
+                            <CommonInfoPreview editUser={editUser} data={user?.commonInfo}/>}
+                        {editMode?.basicInfo ? <BasicInfoEdit saveUser={saveUser}/> :
+                            <BasicInfoPreview editUser={editUser} data={user?.basicInfo}/>}
+                        {editMode?.skills ? <SkillsInfoEdit saveUser={saveUser}/> :
+                            <SkillsInfoPreview editUser={editUser}/>}
+                        {editMode?.education ? <EduInfoEdit saveUser={saveUser}/> :
+                            < EduInfoPreview editUser={editUser}/>}
+                        {editMode?.jobs ? <JobsInfoEdit saveUser={saveUser}/> : < JobsInfoPreview editUser={editUser}/>}
+                        {editMode?.reference ? <RefInfoEdit saveUser={saveUser}/> :
+                            < RefInfoPreview editUser={editUser}/>}
                     </div>
                 </div>
-                <div className={styles.mainEditBox}>
-                    {editMode?.commonInfo ? <CommonInfoEdit saveUser={saveUser}/> :
-                        <CommonInfoPreview editUser={editUser} data={user?.commonInfo}/>}
-                    {editMode?.basicInfo ? <BasicInfoEdit saveUser={saveUser} /> :
-                        < BasicInfoPreview editUser={editUser} data={user?.basicInfo} />}
-                    {editMode?.skills ? <SkillsInfoEdit saveUser={saveUser}/> :
-                        < SkillsInfoPreview editUser={editUser}/>}
-                    {editMode?.education ? <EduInfoEdit saveUser={saveUser}/> : < EduInfoPreview editUser={editUser}/>}
-                    {editMode?.jobs ? <JobsInfoEdit saveUser={saveUser}/> : < JobsInfoPreview editUser={editUser}/>}
-                    {editMode?.reference ? <RefInfoEdit saveUser={saveUser}/> : < RefInfoPreview editUser={editUser}/>}
-                </div>
             </div>
-        </div>
+        </UserContext.Provider>
     )
 }
 
